@@ -1,0 +1,38 @@
+header {
+  margin: 0px auto;
+  text-align: center;
+}
+
+body {
+  background: white;
+}
+
+table {
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.card {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  text-align: center;
+
+}
+
+#player1{
+  border: 1px solid black;
+  height: 400px;
+  width: 200px;
+  float: left;
+  left: 40%;
+}
+
+#player2 {
+
+  border: 1px solid black;
+  height: 400px;
+  width: 200px;
+  float: right;
+  right: 20%;
+}
