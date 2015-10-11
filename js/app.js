@@ -3,7 +3,7 @@ $(function() {
 
   var game = {}
   var gameCard = $(".card")
-  console.log(gameCard)
+
 
   var turnText = $("#turnText")
   var playerOne
@@ -46,18 +46,18 @@ $(function() {
 
 
   game.choice = gameCard.on("click",function(){
+    
+    var idToSRC = 'images/'+ $(this).attr("id") +'.png';
 
     if (clicks === 0){ 
-      idToSRC = 'images/'+ $("td").attr("id") +'.png';
 
-      gameCard.src= idToSRC;
-      console.log(gameCard.src)
+      
+      $(this).attr("src", idToSRC);
+      console.log(this)
       clicks = 1
       console.log (clicks)
     }else if (clicks === 1){
-      idToSRC = 'images/'+ $("td").attr("id") +'.png';
-      console.log(gameCard.src)
-      gameCard.src= idToSRC;
+
       clicks = 2 
       console.log (clicks)
     }else if (clicks === 2){
