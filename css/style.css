@@ -13,17 +13,21 @@ table {
 }
 
 .card {
-  height: 100px;
-  width: 100px;
+  height: 180px;
+  width: 120px;
   border: 1px solid black;
   text-align: center;
 
 }
 
+#start{
+  margin:  0 auto
+}
+
 #player1{
   border: 1px solid black;
   height: 400px;
-  width: 200px;
+  width: 240px;
   float: left;
   left: 40%;
 }
@@ -32,7 +36,21 @@ table {
 
   border: 1px solid black;
   height: 400px;
-  width: 200px;
+  width: 240px;
   float: right;
   right: 20%;
 }
+
+#turnText{
+  clear: both;
+  border: 1px solid black;
+  height: 30px;
+  width: 100px;
+  margin: 0 auto
+}
+
+#reset{
+  clear: both;
+  text-align: center;
+}
+

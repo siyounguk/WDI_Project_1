@@ -1,4 +1,12 @@
 $(function() { 
 
-  alert("shortcut for document.ready method in jQuery"); });
+  var game = {}
+
+  game.start = $(function(){
+    $("#start").on("click", function(){
+      console.log ("clicked")
+    })
+  })
+
+   });
 
