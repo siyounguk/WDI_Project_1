@@ -24,7 +24,7 @@ table {
   margin:  0 auto
 }
 
-#player1{
+#player_one{
   border: 1px solid black;
   height: 400px;
   width: 240px;
@@ -32,7 +32,7 @@ table {
   left: 40%;
 }
 
-#player2 {
+#player_two{
 
   border: 1px solid black;
   height: 400px;
