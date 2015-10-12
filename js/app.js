@@ -80,18 +80,20 @@ $(function() {
         
 
       }else{
-        nextTurn();
+        turnOverCard();
+        addClickListener()
+        // changeTurn();
+        // turnText.text( currentPlayer.innerHTML+ "'s" + " Turn")
+
+
+        
+
 
         // turnText.text(currentPlayer.innerHTML+ "'s" + " Turn"); 
       }
     }
 
-    // function nextClickListener(){
-    //   for(var i = gameCard.length -1; i >=0; i--){
-    //     gameCard[i].addEventListener("click", choice);
-
-    //   }
-    // }
+   
  
 
     function removeCard(){
@@ -102,12 +104,17 @@ $(function() {
       secondCard.style.backgroundImage ='url("./images/small_blank_image.png")';
     }
 
+    function turnOverCard(){
+      firstCard.style.background = "blue";
+      secondCard.style.background ="blue";
+    }
+
     function addFullCard(){
       for (var i = fullImages.length -1; i >=0; i--){
           if((fullImages[i].charAt(fullImages[i].length-5)) == (firstCard.id.charAt(firstCard.id.length-1)) ){
 
             var htmlImg = "<img src='"+ fullImages[i] +"'>"
-            $(currentPlayer).html(htmlImg)
+            $(currentPlayer).append(htmlImg)
           } 
           clicks = 0
       }
