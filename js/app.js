@@ -9,6 +9,16 @@ $(function() {
   var playerTwo = document.getElementById("player_two")
   var currentPlayer 
   var clicks = 0
+  var fullImages = []
+
+  fullImages[0] = './images/fullImages/full_image1.png'
+  fullImages[1] = './images/fullImages/full_image2.png'
+  fullImages[2] = './images/fullImages/full_image3.png'
+  fullImages[3] = './images/fullImages/full_image4.png'
+  fullImages[4] = './images/fullImages/full_image5.png'
+  fullImages[5] = './images/fullImages/full_image6.png'
+  fullImages[6] = './images/fullImages/full_image7.png'
+  fullImages[7] = './images/fullImages/full_image8.png'
  
   function addStartListener (){
     var start = document.getElementById("start");
@@ -25,15 +35,12 @@ $(function() {
   function addClickListener(){
     for(var i = gameCard.length -1; i >=0; i--){
       gameCard[i].addEventListener("click", choice)
-      // console.log(event.target.getAttribute("id"))
-      // console.log(event.target.getAttribute("class"))
+
     }
   }
 
-
   function choice () {
-    // console.log(event.target.getAttribute("id"))
-    // console.log(event.target.getAttribute("class"))
+
 
     var idToSRC = './images/'+ $(this).attr("id") +'.png';
     // console.log(idToSRC)
@@ -44,9 +51,9 @@ $(function() {
       // this.attr("src", idToSRC);
       this.style.backgroundImage = 'url('+idToSRC+')';
       firstCard= event.target;
-      console.log (firstCard)
+      console.log ("firstCard = " + firstCard)
 
-      console.log(this)
+      
 
       choice1 = this.id
       console.log("choice1 = " + choice1)
@@ -57,7 +64,7 @@ $(function() {
 
       this.style.backgroundImage = 'url('+idToSRC+')';
       secondCard = event.target;
-      console.log()
+      console.log("secondCard = " + secondCard)
       choice2 = this.id
       console.log("choice2 = " + choice2)
       clicks = 2 
@@ -66,12 +73,9 @@ $(function() {
     }else if (clicks === 2){
       return false
     }
-  
-
 
     function checkCards (choice1, choice2){
       if (choice1.charAt(choice1.length-1) === choice2.charAt(choice2.length-1)){
-
 
         removeCard()
         addFullCard()
@@ -79,14 +83,22 @@ $(function() {
       }else{
 
         console.log ("wrong")
+        changeTurn()
+        console.log(currentPlayer)
       }
     }
 
-    
+    function changeTurn (){
+      if (currentPlayer === playerOne){
+        currentPlayer = playerTwo
+      }else{
+        currentPlayer = playerOne
+      }
+    }
 
     function removeCard(){
-      firstCard.style.backgroundImage = 'url('+null+')'
-      secondCard.style.backgroundImage = 'url('+null+')'
+      firstCard.style.backgroundImage = 'url("./images/small_blank_image.png")'
+      secondCard.style.backgroundImage ='url("./images/small_blank_image.png")'
     }
 
     function addFullCard(){
