@@ -38,9 +38,14 @@ $(function() {
 
   function startGame (){
     changeTurn();
-    console.log (currentPlayer.innerHTML);
-    turnText.text( currentPlayer.innerHTML+ "'s" + " Turn");
-    console.log (counter);
+    if(counter % 2){
+      var whichPlayer =  1;
+    } else {
+      var whichPlayer =  2;
+    }
+    turnText.text( "Player "+ whichPlayer + "'s" + " Turn")
+    // turnText.text( "Player 1" + "'s" + " Turn")
+    console.log(counter);
     addClickListener();
   } 
 
@@ -66,7 +71,9 @@ $(function() {
       
       checkCards(choice1,choice2);
     }
-      counter ++    
+          
+;
+      counter ++
   }
 
     function checkCards (choice1, choice2){
@@ -78,7 +85,6 @@ $(function() {
         turnOverCard();
         startGame()
         
- 
       }
     }
 
@@ -106,7 +112,7 @@ $(function() {
             .fadeIn(4000)
             console.log(currentPlayer)
           } 
-          
+            
       }
       addClickListener()    
     }
@@ -120,7 +126,8 @@ $(function() {
 
   function resetBoard(){
     for (var i = gameCard.length - 1; i >= 0; i--) {
-      gameCard[i].style.background = "blue"
+      gameCard[i].style.background = "blue";  
+
       
     }
   }
