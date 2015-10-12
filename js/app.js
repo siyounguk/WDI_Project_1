@@ -7,10 +7,10 @@ $(function() {
   var choice2;
   var playerOne = document.getElementById("player_one");
   var playerTwo = document.getElementById("player_two");
-  var currentPlayer = playerTwo;
-  var clicks = 0;
+  var currentPlayer ;
   var fullImages = [];
   var addImageToObject = [];
+  var counter = 1;
 
   fullImages[0] = './images/full_images/full_image1.png';
   fullImages[1] = './images/full_images/full_image2.png';
@@ -27,10 +27,12 @@ $(function() {
   }
 
   function changeTurn (){
-    if (currentPlayer === playerOne){
-      currentPlayer = playerTwo;
-    }else{
+    if (currentPlayer === undefined){
       currentPlayer = playerOne;
+    }else if (currentPlayer === playerOne){
+      currentPlayer = playerTwo;
+    }else if(currentPlayer === playerTwo){
+      currentPlayer = playerOne
     }
   }
 
@@ -38,69 +40,54 @@ $(function() {
     changeTurn();
     console.log (currentPlayer.innerHTML);
     turnText.text( currentPlayer.innerHTML+ "'s" + " Turn");
+    console.log (counter);
     addClickListener();
   } 
 
   function addClickListener(){
     for(var i = gameCard.length -1; i >=0; i--){
       gameCard[i].addEventListener("click", choice);
+
     }
   }
 
   function choice () {
     var idToSRC = './images/'+ $(this).attr("id") +'.png';
 
-    if (clicks === 0){ 
+    if (counter % 2){ 
       this.style.backgroundImage = 'url('+idToSRC+')';
-      firstCard= event.target;
-      // console.log ("firstCard = " + firstCard);
+      firstCard = event.target;
       choice1 = this.id;
-      // console.log("choice1 = " + choice1);
-      clicks = 1;
-    }else if (clicks === 1){
+      
+    }else{
       this.style.backgroundImage = 'url('+idToSRC+')';
       secondCard = event.target;
-      // console.log("secondCard = " + secondCard);
       choice2 = this.id;
-      // console.log("choice2 = " + choice2);
-      clicks = 2;
+      
       checkCards(choice1,choice2);
-    }else if (clicks === 2){
-      return false;
     }
+      counter ++    
   }
 
     function checkCards (choice1, choice2){
       if (choice1.charAt(choice1.length-1) === choice2.charAt(choice2.length-1)){
-        
         addFullCard();
         removeCard();
         addClickListener();
-        
-
       }else{
         turnOverCard();
         startGame()
-        // changeTurn();
-        // turnText.text( currentPlayer.innerHTML+ "'s" + " Turn")
-
-
         
-
-
-        // turnText.text(currentPlayer.innerHTML+ "'s" + " Turn"); 
+ 
       }
     }
 
-   
- 
-
     function removeCard(){
 
-      // $(firstCard).fadeOut(3000)
-      firstCard.style.backgroundImage = 'url("./images/small_blank_image.png")';
-      // $(secondCard).fadeOut(3000)
-      secondCard.style.backgroundImage ='url("./images/small_blank_image.png")';
+      $(firstCard).fadeTo(3000,0)
+      // firstCard.style.backgroundImage = 'url("./images/small_blank_image.png")';
+      $(secondCard).fadeTo(3000, 0)
+      // secondCard.style.backgroundImage ='url("./images/small_blank_image.png")';
     }
 
     function turnOverCard(){
@@ -113,16 +100,33 @@ $(function() {
           if((fullImages[i].charAt(fullImages[i].length-5)) == (firstCard.id.charAt(firstCard.id.length-1)) ){
 
             var htmlImg = "<img src='"+ fullImages[i] +"'>"
-            $(currentPlayer).append(htmlImg)
+            $(currentPlayer)
+            .hide() 
+            .append(htmlImg)
+            .fadeIn(4000)
+            console.log(currentPlayer)
           } 
-          clicks = 0
+          
       }
-      addClickListener()
-      // console.log ( firstCard.style.backgroundImage + secondCard.style.backgroundImage)
+      addClickListener()    
     }
   
 
+
+
+  function addResetListener(){
+    document.getElementById("reset").addEventListener("click", resetBoard)
+  }
+
+  function resetBoard(){
+    for (var i = gameCard.length - 1; i >= 0; i--) {
+      gameCard[i].style.background = "blue"
+      
+    }
+  }
+
   addStartListener();
+  addResetListener();
 
 });
 

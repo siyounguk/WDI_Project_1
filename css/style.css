@@ -21,7 +21,9 @@ table {
 }
 
 #start{
-  margin:  0 auto
+  margin:  0 auto;
+  width: 50px;
+
 }
 
 #player_one{
@@ -57,5 +59,13 @@ table {
 .card {
   background-color: blue
   /*background-image: url(../images/small_blank_image.png);*/
+}
+
+.resetted{
+  background-color: blue;
+  height: 180px;
+  width: 120px;
+  border: 1px solid black;
+  text-align: center;
 }
 
