@@ -54,7 +54,8 @@ table {
   text-align: center;
 }
 
-/*.card {
-  background-image: url(../images/small_blank_image.png);
-}*/
+.card {
+  background-color: blue
+  /*background-image: url(../images/small_blank_image.png);*/
+}
 
