@@ -30,7 +30,6 @@ $(function() {
   var playerTwo = document.getElementById("player_two")
   var currentPlayer 
   var clicks = 0
-  addStartListener()
 
   // game.turnChange = function(){
   //   if (currentPlayer === playerOne){
@@ -55,28 +54,42 @@ $(function() {
   function addClickListener(){
     for(var i = gameCard.length -1; i >=0; i--){
       gameCard[i].addEventListener("click", choice)
+      // console.log(event.target.getAttribute("id"))
+      // console.log(event.target.getAttribute("class"))
     }
   }
 
 
   function choice () {
-  
+    // console.log(event.target.getAttribute("id"))
+    // console.log(event.target.getAttribute("class"))
 
     var idToSRC = './images/'+ $(this).attr("id") +'.png';
+    // console.log(idToSRC)
 
     if (clicks === 0){ 
 
     
-      $("img").attr("src", idToSRC);
+      // this.attr("src", idToSRC);
+      this.style.backgroundImage = 'url('+idToSRC+')';
+      var firstCard= event.target;
+      console.log (firstCard)
+
+      console.log(this)
 
       choice1 = this.id
+      console.log(choice1)
       clicks = 1
+      console.log(clicks)
     }else if (clicks === 1){
 
-      $("img").attr("src", idToSRC);
-      console.log (this)
+      // $("img").attr("src", idToSRC);
+      // $(this).find("img").attr("src", idToSRC);
+      this.style.backgroundImage = 'url('+idToSRC+')';
       choice2 = this.id
+      console.log(choice2)
       clicks = 2 
+      console.log(clicks)
     }else if (clicks === 2){
       return false
     }
@@ -86,8 +99,8 @@ $(function() {
     function checkCards (choice1, choice2){
       if (choice1.charAt(choice1.length-1) === choice2.charAt(choice2.length-1)){
 
-
-        console.log ("correct")
+        // .style.backgroundImage = 'url('+null+')'
+        removeCard()
 
       }else{
 
@@ -95,8 +108,14 @@ $(function() {
       }
     }
 
-    game.checkCards(choice1,choice2)
+    checkCards(choice1,choice2)
+
+    function removeCard(){
+      console.log ("remove card" + firstCard)
+    }
   }
+
+  addStartListener()
 
 });
 
