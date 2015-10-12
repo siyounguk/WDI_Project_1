@@ -60,8 +60,6 @@ $(function() {
       clicks = 1
       // console.log(clicks)
     }else if (clicks === 1){
-
-
       this.style.backgroundImage = 'url('+idToSRC+')';
       secondCard = event.target;
       console.log("secondCard = " + secondCard)
@@ -81,8 +79,7 @@ $(function() {
         addFullCard()
 
       }else{
-
-        console.log ("wrong")
+      
         changeTurn()
         console.log(currentPlayer)
       }
@@ -102,7 +99,14 @@ $(function() {
     }
 
     function addFullCard(){
-      console.log (currentPlayer + firstCard)
+
+
+      for (var i = fullImages.length -1; i >=0; i--){
+        
+          console.log(fullImages[i].charAt(fullImages[i].length-5))
+        
+      }
+      console.log ( firstCard.style.backgroundImage + secondCard.style.backgroundImage)
 
     }
   }
