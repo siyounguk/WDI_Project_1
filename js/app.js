@@ -51,19 +51,18 @@ $(function() {
     var idToSRC = './images/'+ $(this).attr("id") +'.png';
 
     if (clicks === 0){ 
-      // this.attr("src", idToSRC);
       this.style.backgroundImage = 'url('+idToSRC+')';
       firstCard= event.target;
-      console.log ("firstCard = " + firstCard);
+      // console.log ("firstCard = " + firstCard);
       choice1 = this.id;
-      console.log("choice1 = " + choice1);
+      // console.log("choice1 = " + choice1);
       clicks = 1;
     }else if (clicks === 1){
       this.style.backgroundImage = 'url('+idToSRC+')';
       secondCard = event.target;
-      console.log("secondCard = " + secondCard);
+      // console.log("secondCard = " + secondCard);
       choice2 = this.id;
-      console.log("choice2 = " + choice2);
+      // console.log("choice2 = " + choice2);
       clicks = 2;
       checkCards(choice1,choice2);
     }else if (clicks === 2){
@@ -81,7 +80,7 @@ $(function() {
 
       }else{
         turnOverCard();
-        addClickListener()
+        startGame()
         // changeTurn();
         // turnText.text( currentPlayer.innerHTML+ "'s" + " Turn")
 
