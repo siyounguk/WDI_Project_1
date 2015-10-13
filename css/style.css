@@ -1,43 +1,67 @@
 header {
-  margin: 0px auto;
+  margin: 0 auto;
   text-align: center;
+  color: #FADBB9;
+
 }
+
+#start{
+  background-color: #FADBB9;
+  border-radius: 10px;
+  margin:  0 auto;
+  width: 50px;
+  
+}
+
 
 body {
   background-color: #E62645;
   font-family: 'Varela Round', sans-serif;
+
+
 }
 
-#player_one{
-  
-  height: 600px;
-  width: 260px;
+.player, .screen {
   float: left;
-  left: 40%;
-  text-align: center;
-  background-color: #FADBB9;
-  border-radius: 10px
 }
 
-/*img{
-  max-height: 99%;
-  max-width: 99%;
-}*/
-
-#player_two{
-
-  
-  height: 600px;
+.player {
+  overflow-y: auto;  
+  height: 694px;
   width: 260px;
-  float: right;
   right: 20%;
   text-align: center;
   background-color: #FADBB9;
   border-radius: 10px
 }
 
+.player img {
+  position: relative;
+/*  top: -100px;*/
+  border: 1px;
+  border-radius: 10px;
+}
+
+/*.player img:first-child {
+  top: 0;
+  border-radius: 10px;
+}*/
+
+.screen {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.board {
+  width: 1306px;
+  margin: 0 auto;
+}
+
+
+
 table {
-  /*border: 1px solid black;*/
+
   margin: 0 auto;
 }
 
@@ -45,7 +69,6 @@ table {
   height: 180px;
   width: 120px;
   border-radius: 10px;
-  /*border: 1px solid black;*/
   text-align: center;
   background-image: url(../images/back_image.jpg);
   background-size: 99%;
@@ -60,25 +83,26 @@ h1{
 h2{
   text-align: center;
 }
-#start{
-  margin:  0 auto;
-  width: 50px;
-}
+
 
 
 
 #turnText{
   clear: both;
-  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #FADBB9;
+  color:   #D81430; 
   height: 30px;
   width: 200px;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: 10px;
   text-align: center;
 }
 
+
 #reset{
-  clear: both;
-  text-align: center;
+  background-color: #FADBB9;
+  border-radius: 10px;
 }
 
 
