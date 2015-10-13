@@ -9,7 +9,7 @@ $(function() {
   var currentPlayer;
   var addImageToObject = [];
   var counter = 1;
-  var playerCounter = 1
+  var playerCounter = 1;
 
   var fullImages = [];
   fullImages[0] = './images/full_images/full_image1.png';
@@ -24,18 +24,18 @@ $(function() {
 
   var halfImages = []
 
-  halfImages [0] = 'left_image1', halfImages [1] = 'left_image2'
-  halfImages [2] = 'left_image3', halfImages [3] = 'left_image4'
-  halfImages [4] = 'left_image5', halfImages [5] = 'left_image6'
-  halfImages [6] = 'left_image7', halfImages [7] = 'left_image8'
-  halfImages [8] = 'left_image9', halfImages [9] = 'right_image1'
-  halfImages [10] ='right_image2', halfImages [11] ='right_image3'
-  halfImages [12] ='right_image4', halfImages [13] ='right_image5'
-  halfImages [14] ='right_image6', halfImages [15] ='right_image7'
-  halfImages [16] ='right_image8', halfImages [17] ='right_image9'
+  halfImages [0] = 'left_image1', halfImages [1] = 'left_image2';
+  halfImages [2] = 'left_image3', halfImages [3] = 'left_image4';
+  halfImages [4] = 'left_image5', halfImages [5] = 'left_image6';
+  halfImages [6] = 'left_image7', halfImages [7] = 'left_image8';
+  halfImages [8] = 'left_image9', halfImages [9] = 'right_image1';
+  halfImages [10] ='right_image2', halfImages [11] ='right_image3';
+  halfImages [12] ='right_image4', halfImages [13] ='right_image5';
+  halfImages [14] ='right_image6', halfImages [15] ='right_image7';
+  halfImages [16] ='right_image8', halfImages [17] ='right_image9';
 
   function shuffle(halfImages) {
-    var currentIndex = halfImages.length, temporaryValue, randomIndex ;
+    var currentIndex = halfImages.length, temporaryValue, randomIndex;
     while (0 !== currentIndex) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
@@ -45,7 +45,7 @@ $(function() {
     }
     for(var i = gameCard.length -1; i >=0; i--){
       var htmlId = halfImages[i];
-      $(gameCard[i]).attr('id', htmlId)
+      $(gameCard[i]).attr('id', htmlId);
     }
   } 
  
@@ -65,8 +65,8 @@ $(function() {
   }
 
   function startGame (){
-    shuffle(halfImages)
-    console.log(gameCard)
+    shuffle(halfImages);
+    console.log(gameCard);
     changeTurn();
     if(playerCounter % 2){
       var whichPlayer =  1;
@@ -81,10 +81,10 @@ $(function() {
     changeTurn();
     if(playerCounter % 2){
       var whichPlayer =  2;
-    } else {
+    }else{
       var whichPlayer =  1;
     }
-    turnText.text( "Player "+ whichPlayer + "'s" + " Turn")
+    turnText.text("Player "+ whichPlayer + "'s" + " Turn");
     addClickListener();
   }
 
@@ -128,23 +128,21 @@ $(function() {
     }
 
     function turnOverCard(){
-      $(".card").css({
-        "background-image": "url(./images/back_image.jpg)"
-      })
+      $(".card").css({"background-image": "url(./images/back_image.jpg)"})
     }
 
     function addFullCard(){
       for (var i = fullImages.length -1; i >=0; i--){
-          if((fullImages[i].charAt(fullImages[i].length-5)) == (firstCard.id.charAt(firstCard.id.length-1)) ){
+          if((fullImages[i].charAt(fullImages[i].length-5)) == (firstCard.id.charAt(firstCard.id.length-1))){
             var htmlImg = "<img src='"+ fullImages[i] +"'>";
-            $(currentPlayer).hide().append(htmlImg).fadeIn(3100)  
+            $(currentPlayer).hide().append(htmlImg).fadeIn(3100);  
           }          
       }
-      addClickListener()    
+      addClickListener();    
     }
   
   function addResetListener(){
-    document.getElementById("reset").addEventListener("click", resetBoard)
+    document.getElementById("reset").addEventListener("click", resetBoard);
   }
 
   function resetBoard(){

@@ -1,5 +1,5 @@
 body {
-  background-color:   #E01D36;
+  background-color: #E01D36;
   font-family: 'Varela Round', sans-serif;
 }
 
@@ -20,7 +20,7 @@ h1{
   clear: both;
   border-radius: 10px;
   background-color: #FADBB9;
-  color:   #D81430; 
+  color: #D81430; 
   height: 20px;
   width: 200px;
   margin: auto;
@@ -36,7 +36,7 @@ p{
 
 #start{
   background-color: #FADBB9;
-  color:   #D81430;
+  color: #D81430;
   border-radius: 10px;
   margin: 0 auto;
   width: 70px;
@@ -46,14 +46,11 @@ p{
 
 #reset{
   background-color: #FADBB9;
-  color:   #D81430;
+  color: #D81430;
   border-radius: 10px;
   width: 70px;
   font-size: 14px;
 }
-
-
-
 
 .player, .screen {
   float: left;
