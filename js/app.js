@@ -73,7 +73,7 @@ $(function() {
     } else {
       var whichPlayer =  2;
     }
-    turnText.text( "Player "+ whichPlayer + "'s" + " Turn");
+    turnText.text( "player "+ whichPlayer + "'s" + " turn");
     addClickListener();
   } 
 
@@ -84,7 +84,7 @@ $(function() {
     }else{
       var whichPlayer =  1;
     }
-    turnText.text("Player "+ whichPlayer + "'s" + " Turn");
+    turnText.text("player "+ whichPlayer + "'s" + " turn");
     addClickListener();
   }
 
