@@ -10,6 +10,7 @@ $(function() {
   var currentPlayer;
   var addImageToObject = [];
   var counter = 1;
+  var playerCounter = 1
 
   var fullImages = [];
   fullImages[0] = './images/full_images/full_image1.png';
@@ -48,11 +49,9 @@ $(function() {
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
 
-      // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
 
-      // And swap it with the current element.
       temporaryValue = halfImages[currentIndex];
       halfImages[currentIndex] = halfImages[randomIndex];
       halfImages[randomIndex] = temporaryValue;
@@ -62,7 +61,7 @@ $(function() {
       var htmlId = halfImages[i];
       // $(gameCard[i]).append(htmlId)
       $(gameCard[i]).attr('id', htmlId)
-      console.log(gameCard[i])
+      // console.log(gameCard[i])
     }
   } 
  
@@ -79,32 +78,34 @@ $(function() {
     }else if(currentPlayer === playerTwo){
       currentPlayer = playerOne;
     }
+
   }
 
   function startGame (){
     shuffle(halfImages)
     changeTurn();
-    if(counter % 2){
+    if(playerCounter % 2){
       var whichPlayer =  1;
     } else {
       var whichPlayer =  2;
     }
     turnText.text( "Player "+ whichPlayer + "'s" + " Turn")
     // turnText.text( "Player 1" + "'s" + " Turn")
-    console.log(counter);
+    console.log(playerCounter);
     addClickListener();
   } 
 
   function nextTurn (){
     changeTurn();
-    if(counter % 2){
-      var whichPlayer =  1;
-    } else {
+    if(playerCounter % 2){
       var whichPlayer =  2;
+    } else {
+      var whichPlayer =  1;
     }
     turnText.text( "Player "+ whichPlayer + "'s" + " Turn")
     // turnText.text( "Player 1" + "'s" + " Turn")
-    console.log(counter);
+
+    console.log(playerCounter);
     addClickListener();
   }
 
@@ -140,9 +141,10 @@ $(function() {
         removeCard();
         addClickListener();
       }else{
-        setTimeout(turnOverCard, 500);
+        setTimeout(turnOverCard, 1000);
         nextTurn();
-        
+        playerCounter ++
+        console.log(playerCounter)
       }
     }
 
