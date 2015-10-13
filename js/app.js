@@ -23,22 +23,24 @@ $(function() {
 
   var halfImages = []
 
-  halfImages [0] = "a"
-  halfImages [1] = "b"
-  halfImages [2] = "c"
-  halfImages [3] = "d"
-  halfImages [4] = "e"
-  halfImages [5] = "f"
-  halfImages [6] = "g"
-  halfImages [7] = "h"
-  halfImages [8] = "i"
-  halfImages [9] = "j"
-  halfImages [10] ="k"
-  halfImages [11] ="l"
-  halfImages [12] ="m"
-  halfImages [13] ="n"
-  halfImages [14] ="o"
-  halfImages [15] ="p"
+  halfImages [0] = 'left_image1'
+  halfImages [1] = 'left_image2'
+  halfImages [2] = 'left_image3'
+  halfImages [3] = 'left_image4'
+  halfImages [4] = 'left_image5'
+  halfImages [5] = 'left_image6'
+  halfImages [6] = 'left_image7'
+  halfImages [7] = 'left_image8'
+  halfImages [8] = 'left_image9'
+  halfImages [9] = 'right_image1'
+  halfImages [10] ='right_image2'
+  halfImages [11] ='right_image3'
+  halfImages [12] ='right_image4'
+  halfImages [13] ='right_image5'
+  halfImages [14] ='right_image6'
+  halfImages [15] ='right_image7'
+  halfImages [16] ='right_image8'
+  halfImages [17] ='right_image9'
 
   function shuffle(halfImages) {
     var currentIndex = halfImages.length, temporaryValue, randomIndex ;
@@ -55,12 +57,14 @@ $(function() {
       halfImages[currentIndex] = halfImages[randomIndex];
       halfImages[randomIndex] = temporaryValue;
     }
-    console.log(halfImages)
-    
-  }
-
-  
-
+    for(var i = gameCard.length -1; i >=0; i--){
+      // var htmlId = "id='"+ halfImages[i]+"'" ;
+      var htmlId = halfImages[i];
+      // $(gameCard[i]).append(htmlId)
+      $(gameCard[i]).attr('id', htmlId)
+      console.log(gameCard[i])
+    }
+  } 
  
   function addStartListener (){
     var start = document.getElementById("start");
