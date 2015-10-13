@@ -83,15 +83,14 @@ $(function() {
 
   function startGame (){
     shuffle(halfImages)
+    console.log(gameCard)
     changeTurn();
     if(playerCounter % 2){
       var whichPlayer =  1;
     } else {
       var whichPlayer =  2;
     }
-    turnText.text( "Player "+ whichPlayer + "'s" + " Turn")
-    // turnText.text( "Player 1" + "'s" + " Turn")
-    console.log(playerCounter);
+    turnText.text( "Player "+ whichPlayer + "'s" + " Turn");
     addClickListener();
   } 
 
@@ -103,9 +102,7 @@ $(function() {
       var whichPlayer =  1;
     }
     turnText.text( "Player "+ whichPlayer + "'s" + " Turn")
-    // turnText.text( "Player 1" + "'s" + " Turn")
-
-    console.log(playerCounter);
+ 
     addClickListener();
   }
 
@@ -145,7 +142,7 @@ $(function() {
         setTimeout(turnOverCard, 1000);
         nextTurn();
         playerCounter ++
-        console.log(playerCounter)
+        // console.log(playerCounter)
       }
     }
 
@@ -159,34 +156,18 @@ $(function() {
 
     function turnOverCard(){
 
-      // setTimeout(function() { ... }, timeMS);
-
-      firstCard.setAttribute(
-         "style", "background: 'url(./images/back_image.jpg)'; height: 180px; width: 120px; backgroundSize: 120px");
-      secondCard.setAttribute(
-         "style", "background: 'url(./images/back_image.jpg)'; height: 180px; width: 120px; backgroundSize: 120px")
-         // "font-size: 100px; font-style: italic; color:#ff0000;");
-
-      // firstCard.style.background = "url(./images/back_image.jpg)";
-      // firstCard.style.height = "180px";
-      // firstCard.style.width= "120px";
-      // firstCard.style.backgroundSize = "99%"
-      // secondCard.style.background ="url(./images/back_image.jpg)";
-      // secondCard.style.height = "180px";
-      // secondCard.style.width= "120px";
-      // secondCard.style.backgroundSize = "99%"
+      $(".card").css({
+        "background-image": "url(./images/back_image.jpg)"
+      })
     }
 
     function addFullCard(){
       for (var i = fullImages.length -1; i >=0; i--){
           if((fullImages[i].charAt(fullImages[i].length-5)) == (firstCard.id.charAt(firstCard.id.length-1)) ){
 
-            var htmlImg = "<img src='"+ fullImages[i] +"'>"
-            $(currentPlayer)
-            .hide()
-            .append(htmlImg)
-            .fadeIn(4000)
-            console.log(currentPlayer)
+            var htmlImg = "<img src='"+ fullImages[i] +"'>";
+            $(currentPlayer).hide().append(htmlImg).fadeIn(4000)
+            
           }          
       }
       addClickListener()    

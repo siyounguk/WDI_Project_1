@@ -4,32 +4,36 @@ header {
 }
 
 body {
-  b/*ackground-color: #FADBB9;*/
+  background-color: #E62645;
   font-family: 'Varela Round', sans-serif;
 }
 
 #player_one{
-  border: 1px solid black;
+  
   height: 600px;
-  width: 240px;
+  width: 260px;
   float: left;
   left: 40%;
   text-align: center;
+  background-color: #FADBB9;
+  border-radius: 10px
 }
 
-img{
+/*img{
   max-height: 99%;
   max-width: 99%;
-}
+}*/
 
 #player_two{
 
-  border: 1px solid black;
+  
   height: 600px;
-  width: 240px;
+  width: 260px;
   float: right;
   right: 20%;
   text-align: center;
+  background-color: #FADBB9;
+  border-radius: 10px
 }
 
 table {
