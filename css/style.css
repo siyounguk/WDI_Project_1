@@ -1,16 +1,39 @@
 header {
   margin: 0 auto;
+
   text-align: center;
   color: #FADBB9;
 
 }
 
+h1{
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+#turnText{
+  clear: both;
+  border-radius: 10px;
+  background-color: #FADBB9;
+  color:   #D81430; 
+  height: 30px;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p{
+  margin: 3px;
+  color: #FADBB9;
+}
+
 #start{
   background-color: #FADBB9;
   border-radius: 10px;
-  margin:  0 auto;
+  margin: 0 auto;
   width: 50px;
-  
+  margin-bottom: 5px;
 }
 
 
@@ -32,7 +55,9 @@ body {
   right: 20%;
   text-align: center;
   background-color: #FADBB9;
-  border-radius: 10px
+  border-radius: 10px;
+  font-size: 20px;
+  color:   #D81430;
 }
 
 .player img {
@@ -41,11 +66,6 @@ body {
   border: 1px;
   border-radius: 10px;
 }
-
-/*.player img:first-child {
-  top: 0;
-  border-radius: 10px;
-}*/
 
 .screen {
   margin-left: 20px;
@@ -61,7 +81,6 @@ body {
 
 
 table {
-
   margin: 0 auto;
 }
 
@@ -72,8 +91,6 @@ table {
   text-align: center;
   background-image: url(../images/back_image.jpg);
   background-size: 99%;
-
-
 }
 
 h1{
@@ -84,20 +101,6 @@ h2{
   text-align: center;
 }
 
-
-
-
-#turnText{
-  clear: both;
-  border-radius: 10px;
-  background-color: #FADBB9;
-  color:   #D81430; 
-  height: 30px;
-  width: 200px;
-  margin: auto;
-  margin-top: 10px;
-  text-align: center;
-}
 
 
 #reset{
