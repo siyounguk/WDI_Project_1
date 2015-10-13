@@ -178,11 +178,9 @@ $(function() {
   }
 
   function resetBoard(){
-    // for (var i = gameCard.length - 1; i >= 0; i--) {
-    //   gameCard[i].style.background = "blue";  
+   
     window.location.reload()
-      
-    // }
+
   }
 
   addStartListener();
