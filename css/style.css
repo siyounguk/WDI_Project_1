@@ -4,7 +4,7 @@ header {
 }
 
 body {
-  /*background: #FADBB9;*/
+  b/*ackground-color: #FADBB9;*/
   font-family: 'Varela Round', sans-serif;
 }
 
@@ -15,6 +15,11 @@ body {
   float: left;
   left: 40%;
   text-align: center;
+}
+
+img{
+  max-height: 99%;
+  max-width: 99%;
 }
 
 #player_two{
@@ -28,18 +33,19 @@ body {
 }
 
 table {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   margin: 0 auto;
 }
 
 .card {
   height: 180px;
   width: 120px;
-
-  border: 1px solid black;
+  border-radius: 10px;
+  /*border: 1px solid black;*/
   text-align: center;
   background-image: url(../images/back_image.jpg);
-  background-size: 100%;
+  background-size: 99%;
+
 
 }
 

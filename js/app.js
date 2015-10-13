@@ -130,6 +130,7 @@ $(function() {
       choice2 = this.id;
       
       checkCards(choice1,choice2);
+
     }         
 
       counter ++
@@ -160,8 +161,20 @@ $(function() {
 
       // setTimeout(function() { ... }, timeMS);
 
-      firstCard.style.background = "blue";
-      secondCard.style.background ="blue";
+      firstCard.setAttribute(
+         "style", "background: 'url(./images/back_image.jpg)'; height: 180px; width: 120px; backgroundSize: 120px");
+      secondCard.setAttribute(
+         "style", "background: 'url(./images/back_image.jpg)'; height: 180px; width: 120px; backgroundSize: 120px")
+         // "font-size: 100px; font-style: italic; color:#ff0000;");
+
+      // firstCard.style.background = "url(./images/back_image.jpg)";
+      // firstCard.style.height = "180px";
+      // firstCard.style.width= "120px";
+      // firstCard.style.backgroundSize = "99%"
+      // secondCard.style.background ="url(./images/back_image.jpg)";
+      // secondCard.style.height = "180px";
+      // secondCard.style.width= "120px";
+      // secondCard.style.backgroundSize = "99%"
     }
 
     function addFullCard(){
