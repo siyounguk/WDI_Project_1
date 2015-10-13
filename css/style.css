@@ -1,3 +1,8 @@
+body {
+  background-color:   #E01D36;
+  font-family: 'Varela Round', sans-serif;
+}
+
 header {
   margin: 0 auto;
 
@@ -31,23 +36,24 @@ p{
 
 #start{
   background-color: #FADBB9;
+  color:   #D81430;
   border-radius: 10px;
   margin: 0 auto;
   width: 70px;
   margin-bottom: 3px;
+  font-size: 14px;
 }
 
 #reset{
   background-color: #FADBB9;
+  color:   #D81430;
   border-radius: 10px;
   width: 70px;
+  font-size: 14px;
 }
 
 
-body {
-  background-color: #E62645;
-  font-family: 'Varela Round', sans-serif;
-}
+
 
 .player, .screen {
   float: left;
@@ -55,7 +61,7 @@ body {
 
 .player {
   overflow-y: auto;  
-  height: 715px;
+  height: 720px;
   width: 260px;
   right: 20%;
   text-align: center;
@@ -64,12 +70,10 @@ body {
   border-radius: 10px;
   font-size: 20px;
   color:   #D81430;
-
 }
 
 .player img {
   position: relative;
-/*  top: -100px;*/
   border: 1px;
   border-radius: 10px;
 }
@@ -84,8 +88,6 @@ body {
   width: 1306px;
   margin: 0 auto;
 }
-
-
 
 table {
   margin: 0 auto;
@@ -107,6 +109,13 @@ h1{
 h2{
   text-align: center;
 }
+
+#link{
+  text-align: center;
+  clear: both;
+  margin: 0 auto;
+}
+
 
 
 

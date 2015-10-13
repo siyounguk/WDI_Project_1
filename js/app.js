@@ -1,5 +1,4 @@
 $(function() { 
-
   var game = {};
   var gameCard = document.getElementsByClassName("card");
   var turnText = $("#turnText");
@@ -21,6 +20,7 @@ $(function() {
   fullImages[5] = './images/full_images/full_image6.png';
   fullImages[6] = './images/full_images/full_image7.png';
   fullImages[7] = './images/full_images/full_image8.png';
+  fullImages[8] = './images/full_images/full_image9.png';
 
   var halfImages = []
 
@@ -44,11 +44,8 @@ $(function() {
       halfImages[randomIndex] = temporaryValue;
     }
     for(var i = gameCard.length -1; i >=0; i--){
-      // var htmlId = "id='"+ halfImages[i]+"'" ;
       var htmlId = halfImages[i];
-      // $(gameCard[i]).append(htmlId)
       $(gameCard[i]).attr('id', htmlId)
-      // console.log(gameCard[i])
     }
   } 
  
@@ -126,8 +123,8 @@ $(function() {
     }
 
     function removeCard(){
-      $(firstCard).fadeTo(3000,0);
-      $(secondCard).fadeTo(3000,0);
+      $(firstCard).fadeTo(1400,0);
+      $(secondCard).fadeTo(1400,0);
     }
 
     function turnOverCard(){
@@ -140,7 +137,7 @@ $(function() {
       for (var i = fullImages.length -1; i >=0; i--){
           if((fullImages[i].charAt(fullImages[i].length-5)) == (firstCard.id.charAt(firstCard.id.length-1)) ){
             var htmlImg = "<img src='"+ fullImages[i] +"'>";
-            $(currentPlayer).hide().append(htmlImg).fadeIn(4000)  
+            $(currentPlayer).hide().append(htmlImg).fadeIn(3100)  
           }          
       }
       addClickListener()    
