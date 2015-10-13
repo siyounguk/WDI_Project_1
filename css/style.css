@@ -4,7 +4,27 @@ header {
 }
 
 body {
-  background: white;
+  /*background: #FADBB9;*/
+  font-family: 'Varela Round', sans-serif;
+}
+
+#player_one{
+  border: 1px solid black;
+  height: 600px;
+  width: 240px;
+  float: left;
+  left: 40%;
+  text-align: center;
+}
+
+#player_two{
+
+  border: 1px solid black;
+  height: 600px;
+  width: 240px;
+  float: right;
+  right: 20%;
+  text-align: center;
 }
 
 table {
@@ -15,40 +35,35 @@ table {
 .card {
   height: 180px;
   width: 120px;
+
   border: 1px solid black;
   text-align: center;
+  background-image: url(../images/back_image.jpg);
+  background-size: 100%;
 
 }
 
+h1{
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+}
 #start{
   margin:  0 auto;
   width: 50px;
-
 }
 
-#player_one{
-  border: 1px solid black;
-  height: 400px;
-  width: 240px;
-  float: left;
-  left: 40%;
-}
 
-#player_two{
-
-  border: 1px solid black;
-  height: 400px;
-  width: 240px;
-  float: right;
-  right: 20%;
-}
 
 #turnText{
   clear: both;
   border: 1px solid black;
   height: 30px;
-  width: 100px;
-  margin: 0 auto
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #reset{
@@ -56,16 +71,4 @@ table {
   text-align: center;
 }
 
-.card {
-  background-color: blue
-  /*background-image: url(../images/back_image.jpg);*/
-}
-
-.resetted{
-  background-color: blue;
-  height: 180px;
-  width: 120px;
-  border: 1px solid black;
-  text-align: center;
-}
 
